@@ -1,0 +1,22 @@
+header{
+    height: 8vh;
+    background-color: blue;
+    font-family: 'Oswald', sans-serif;
+}
+
+header ul {
+    width: 90%;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+header ul li a{
+    color: white;
+    text-decoration: none;
+}
