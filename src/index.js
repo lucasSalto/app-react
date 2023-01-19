@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+
 import './index.css';
 
 
@@ -7,16 +9,30 @@ import './index.css';
 import NavBar from './components/navbar/NavBar.js';
 import Footer from './components/footer/Footer.js';
 import ItemListContainer from './components/itemlistcontainer/ItemListContainer.js';
-
+import Home from './components/home/Home.js'
+import Nosotros from './components/nosotros/Nosotros.js'
+import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailConteiner';
 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavBar></NavBar>
-    <ItemListContainer greeting ="prueba"></ItemListContainer>
-    <Footer></Footer>
+
+    <BrowserRouter>
+      <NavBar/>
+
+        <Routes>
+          <Route exact path='/' element={<Home/>}/>
+          <Route exact path='/productos' element={<ItemListContainer greeting="txt-produtos"/>}/>
+          <Route exact path='/producto/:productoId' element={<ItemDetailContainer/>}/>
+          <Route exact path='/nosotros' element={<Nosotros/>}/>
+ 
+        </Routes>
+
+      <Footer/> 
+    </BrowserRouter>
+
   </React.StrictMode>
 );
 
